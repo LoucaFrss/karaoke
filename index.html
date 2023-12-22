@@ -116,7 +116,53 @@
                         "words": "♪",
                         "syllables": [],
                         "endTimeMs": "0"
-                    },
+                    }
+                ],
+                "provider": "MusixMatch",
+                "providerLyricsId": "111432402",
+                "providerDisplayName": "Musixmatch",
+                "syncLyricsUri": "",
+                "isDenseTypeface": false,
+                "alternatives": [],
+                "language": "fr",
+                "isRtlLanguage": false,
+                "fullscreenAction": "FULLSCREEN_LYRICS",
+                "showUpsell": false,
+                "capStatus": "NONE",
+                "impressionsRemaining": 0
+            },
+            "colors": {
+                "background": -9079435,
+                "text": -16777216,
+                "highlightText": -1
+            },
+            "hasVocalRemoval": false
+        };
+        document.getElementById("start").addEventListener("click", () => {
+
+            var audio = new Audio('Nos-Clbrations374.mp3');
+            audio.play();
+            setTimeout(() => {
+                audio.oncanplay = () => {
+
+
+
+                    for (i of test.lyrics.lines) {
+                        setTimeout(function (j) {
+                            document.getElementById("text").innerText = j.words;
+                        }, Number(i.startTimeMs) - 1700, i)
+                    }
+                }
+            }, 0)
+        })
+
+    </script>
+</body>
+
+</html>
+
+/*
+,
                     {
                         "startTimeMs": "157400",
                         "words": "J\u0027étais parti avant, tout seul mais perdant",
@@ -267,46 +313,4 @@
                         "syllables": [],
                         "endTimeMs": "0"
                     }
-                ],
-                "provider": "MusixMatch",
-                "providerLyricsId": "111432402",
-                "providerDisplayName": "Musixmatch",
-                "syncLyricsUri": "",
-                "isDenseTypeface": false,
-                "alternatives": [],
-                "language": "fr",
-                "isRtlLanguage": false,
-                "fullscreenAction": "FULLSCREEN_LYRICS",
-                "showUpsell": false,
-                "capStatus": "NONE",
-                "impressionsRemaining": 0
-            },
-            "colors": {
-                "background": -9079435,
-                "text": -16777216,
-                "highlightText": -1
-            },
-            "hasVocalRemoval": false
-        };
-        document.getElementById("start").addEventListener("click", () => {
-
-            var audio = new Audio('Nos-Clbrations374.mp3');
-            audio.play();
-            setTimeout(() => {
-                audio.oncanplay = () => {
-
-
-
-                    for (i of test.lyrics.lines) {
-                        setTimeout(function (j) {
-                            document.getElementById("text").innerText = j.words;
-                        }, Number(i.startTimeMs) - 1700, i)
-                    }
-                }
-            }, 0)
-        })
-
-    </script>
-</body>
-
-</html>
+*/
